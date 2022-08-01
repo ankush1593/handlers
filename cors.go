@@ -111,9 +111,9 @@ func (ch *cors) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set(corsAllowCredentialsHeader, "true")
 	}
 
-	if len(ch.allowedOrigins) > 1 {
-		w.Header().Set(corsVaryHeader, corsOriginHeader)
-	}
+// 	if len(ch.allowedOrigins) > 1 {
+// 		w.Header().Set(corsVaryHeader, corsOriginHeader)
+// 	}
 
 	returnOrigin := origin
 	if ch.allowedOriginValidator == nil && len(ch.allowedOrigins) == 0 {
